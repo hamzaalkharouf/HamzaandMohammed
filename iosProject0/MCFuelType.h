@@ -9,7 +9,9 @@
 #define MCFuelType_h
 
 typedef NS_ENUM(NSInteger,MCFuelType) {
+    
     diesel=1,
-    gasoline
+    gasoline,
+    notdefinedFuelType
 };
 #endif /* MCFuelType_h */

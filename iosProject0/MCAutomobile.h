@@ -11,13 +11,21 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MCAutomobile : NSObject
+
 @property (copy, nonatomic) NSString *manufactureCompany;
 @property (retain, nonatomic) NSDate *manufactureDate;
 @property (copy, nonatomic) NSString *model;
 @property (retain, nonatomic) MCEngine *engine;
-@property (assign, nonatomic) NSInteger plante_num;
+@property (assign, nonatomic) NSInteger planteNum;
 @property  (assign, nonatomic) MCGearType gearType;
-@property (assign, nonatomic) NSInteger body_serial_num;
-- (id)initWithmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num;
+@property (assign, nonatomic) NSInteger bodySerialNum;
+
+- (instancetype)initWithmanufactureCompany:(NSString *)manufactureCompany
+                 manufactureDate:(NSDate *)manufactureDate
+                           model:(NSString *)model
+                          engine:(MCEngine *)engine
+                       planteNum:(NSInteger )planteNum
+                      MCGearType:(MCGearType)gearType
+                   bodySerialNum:(NSInteger )bodySerialNum;
 @end
 NS_ASSUME_NONNULL_END

@@ -8,40 +8,71 @@
 #import "MCMotorcycle.h"
 
 @implementation MCMotorcycle
-- (id)initWithtier_diameter:(double)tier_diameter andlength:(double)length andmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num{
+- (instancetype)initWithtierDameter:(double)tierDiameter
+                   length:(double)length
+       manufactureCompany:(NSString *)manufactureCompany
+          manufactureDate:(NSDate *)manufactureDate
+                    model:(NSString *)model
+                   engine:(MCEngine *)engine
+                planteNum:(NSInteger )planteNum
+               MCGearType:(MCGearType)gearType
+            bodySerialNum:(NSInteger )bodySerialNum{
 
-    self = [super initWithmanufactureCompany:manufactureCompany andmanufactureDate:manufactureDate andmodel:model andengine:engine andplante_num:plante_num andMCGearType:gearType andbody_serial_num:body_serial_num];
+    self = [super initWithmanufactureCompany:manufactureCompany
+                             manufactureDate:manufactureDate
+                                       model:model
+                                      engine:engine
+                                   planteNum:planteNum
+                                  MCGearType:gearType
+                               bodySerialNum:bodySerialNum];
     if (self){
-        [self setTier_diameter:tier_diameter];
+        [self setTierDiameter:tierDiameter];
         [self setLength:length];
     }
     return self;
 }
-- (id)init{
-    NSString *defaultmanufactureCompany=@"mercedes";
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        [dateComponents setYear:2017];
-        [dateComponents setMonth:1];
-        [dateComponents setDay:28];
-        [dateComponents setHour:11];
-        [dateComponents setMinute:9];
-        NSCalendar *calendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSDate *defaultmanufactureDate = [calendar dateFromComponents:dateComponents];
-    NSString *defaultmodel=@"MV Agusta";
+- (instancetype)init{
+    
+    NSString *defaultmanufactureCompany=@" ";
+    NSDate *defaultmanufactureDate =  [NSDate date];
+    NSString *defaultmodel=@" ";
     MCEngine *defaultengine = [[MCEngine alloc]init];
-    NSInteger defaultplante_num=00000;
-    NSInteger defaultbody_serial_num=123456;
+    NSInteger defaultplanteNum=0;
+    NSInteger defaultbodySerialNum=0;
     
-    double defaulttier_diameter=542;
-    double defaultlength=5;
-    MCGearType defaultMCGearType =normall;
+    double defaulttierDiameter=0;
+    double defaultlength=0;
+    MCGearType defaultMCGearType =notdefined;
     
-    return [self initWithtier_diameter:defaulttier_diameter andlength:defaultlength andmanufactureCompany:defaultmanufactureCompany andmanufactureDate:defaultmanufactureDate andmodel:defaultmodel andengine:defaultengine andplante_num:defaultplante_num andMCGearType:defaultMCGearType andbody_serial_num:defaultbody_serial_num];
+    return [self initWithtierDameter:defaulttierDiameter
+                              length:defaultlength
+                  manufactureCompany:defaultmanufactureCompany
+                     manufactureDate:defaultmanufactureDate
+                               model:defaultmodel
+                              engine:defaultengine
+                           planteNum:defaultplanteNum
+                          MCGearType:defaultMCGearType
+                       bodySerialNum:defaultbodySerialNum];
 }
-- (id)initWithmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num{
-    double defaulttier_diameter=542;
-    double defaultlength=5;
-    return [self initWithtier_diameter:defaulttier_diameter andlength:defaultlength andmanufactureCompany:manufactureCompany andmanufactureDate:manufactureDate andmodel:model andengine:engine andplante_num:plante_num andMCGearType:gearType andbody_serial_num:body_serial_num];
+- (instancetype  )initWithmanufactureCompany:(NSString *)manufactureCompany
+                 manufactureDate:(NSDate *)manufactureDate
+                           model:(NSString *)model
+                          engine:(MCEngine *)engine
+                       planteNum:(NSInteger )planteNum
+                      MCGearType:(MCGearType)gearType
+                   bodySerialNum:(NSInteger )bodySerialNum{
+    
+    double defaulttierDiameter=0;
+    double defaultlength=0;
+    return [self initWithtierDameter:defaulttierDiameter
+                               length:defaultlength
+                   manufactureCompany:manufactureCompany
+                      manufactureDate:manufactureDate
+                                model:model
+                               engine:engine
+                            planteNum:planteNum
+                           MCGearType:gearType
+                        bodySerialNum:bodySerialNum];
 }
 
 @end

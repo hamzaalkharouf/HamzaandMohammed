@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger,MCGearType) {
     normall=3,
-    automatic
+    automatic,
+    notdefined
 };
 #endif /* MCGearType_h */
 

@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSInteger capacity;
 @property (assign, nonatomic) NSInteger cylinders;
 @property  (assign, nonatomic) MCFuelType fuelType;
-- (id)initWithmanufacture:(NSString *)manufacture andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andcapacity:(NSInteger )capacity andcylinders:(NSInteger )cylinders andfuelType:(MCFuelType)fuelType;
+- (instancetype)initWithmanufacture:(NSString *)manufacture
+                    manufactureDate:(NSDate *)manufactureDate
+                              model:(NSString *)model
+                           capacity:(NSInteger )capacity
+                          cylinders:(NSInteger )cylinders
+                           fuelType:(MCFuelType)fuelType;
 @end
 NS_ASSUME_NONNULL_END

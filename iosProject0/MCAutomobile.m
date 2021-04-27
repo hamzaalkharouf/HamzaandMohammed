@@ -8,36 +8,41 @@
 #import "MCAutomobile.h"
 
 @implementation MCAutomobile
-- (id)initWithmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num{
+- (instancetype)initWithmanufactureCompany:(NSString *)manufactureCompany
+                           manufactureDate:(NSDate *)manufactureDate
+                                     model:(NSString *)model
+                                    engine:(MCEngine *)engine
+                                 planteNum:(NSInteger )planteNum
+                                MCGearType:(MCGearType)gearType
+                             bodySerialNum:(NSInteger )bodySerialNum{
     self = [super init];
     if (self){
         [self setManufactureCompany:manufactureCompany];
         [self setManufactureDate:manufactureDate];
         [self setModel:model];
         [self setEngine:engine];
-        [self setPlante_num:plante_num];
+        [self setPlanteNum:planteNum];
         [self setGearType:gearType];
-        [self setBody_serial_num:body_serial_num];
+        [self setBodySerialNum:bodySerialNum];
     }
     return self;
 }
-- (id)init{
-    NSString *defaultmanufactureCompany=@"mercedes";
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        [dateComponents setYear:2014];
-        [dateComponents setMonth:1];
-        [dateComponents setDay:28];
-        [dateComponents setHour:11];
-        [dateComponents setMinute:9];
-        NSCalendar *calendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSDate *defaultmanufactureDate = [calendar dateFromComponents:dateComponents];
-    NSString *defaultmodel=@"mercedes-benz Truck";
+- (instancetype)init{
+    NSString *defaultmanufactureCompany=@" ";
+    NSDate *defaultmanufactureDate =  [NSDate date];
+    NSString *defaultmodel=@" ";
     MCEngine *defaultengine = [[MCEngine alloc]init];
-    NSInteger defaultplante_num=00000;
-    NSInteger defaultbody_serial_num=123456;
-    MCGearType defaultMCGearType =normall;
+    NSInteger defaultplanteNum=0;
+    NSInteger defaultbodySerialNum=0;
+    MCGearType defaultMCGearType =notdefined;
 
-    return [self initWithmanufactureCompany:defaultmanufactureCompany andmanufactureDate:defaultmanufactureDate andmodel:defaultmodel andengine:defaultengine andplante_num:defaultplante_num andMCGearType:defaultMCGearType andbody_serial_num:defaultbody_serial_num];
+    return [self initWithmanufactureCompany:defaultmanufactureCompany
+                            manufactureDate:defaultmanufactureDate
+                                      model:defaultmodel
+                                     engine:defaultengine
+                                  planteNum:defaultplanteNum
+                                 MCGearType:defaultMCGearType
+                              bodySerialNum:defaultbodySerialNum];
 }
 
 @end

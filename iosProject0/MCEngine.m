@@ -8,7 +8,12 @@
 #import "MCEngine.h"
 
 @implementation MCEngine
-- (id)initWithmanufacture:(NSString *)manufacture andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andcapacity:(NSInteger )capacity andcylinders:(NSInteger )cylinders andfuelType:(MCFuelType)fuelType{
+- (instancetype)initWithmanufacture:(NSString *)manufacture
+                    manufactureDate:(NSDate *)manufactureDate
+                              model:(NSString *)model
+                           capacity:(NSInteger )capacity
+                          cylinders:(NSInteger )cylinders
+                           fuelType:(MCFuelType)fuelType{
     self = [super init];
     if (self){
         [self setManufacture:manufacture];
@@ -21,23 +26,22 @@
     }
     return self;
 }
-- (id)init{
-    NSString *defaultanufacture=@"mercedes";
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        [dateComponents setYear:2014];
-        [dateComponents setMonth:1];
-        [dateComponents setDay:28];
-        [dateComponents setHour:11];
-        [dateComponents setMinute:9];
-        NSCalendar *calendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSDate *defaultmanufactureDate = [calendar dateFromComponents:dateComponents];
-    NSString *defaultmodel=@"Medium-duty engines";
+- (instancetype)init{
+    NSString *defaultanufacture=@" ";
+
+    NSDate *defaultmanufactureDate = [NSDate date];
+    NSString *defaultmodel=@" ";
     
-    NSInteger defaultcapacity=240;
-    NSInteger defaultcylinders=6;
-    MCFuelType defaultFuelType =diesel;
+    NSInteger defaultcapacity=0;
+    NSInteger defaultcylinders=0;
+    MCFuelType defaultFuelType =notdefinedFuelType;
     
     
-    return [self initWithmanufacture:defaultanufacture andmanufactureDate:defaultmanufactureDate andmodel:defaultmodel andcapacity:defaultcapacity andcylinders:defaultcylinders andfuelType:defaultFuelType];
+    return [self initWithmanufacture:defaultanufacture
+                     manufactureDate:defaultmanufactureDate
+                               model:defaultmodel
+                            capacity:defaultcapacity
+                           cylinders:defaultcylinders
+                            fuelType:defaultFuelType];
 }
 @end

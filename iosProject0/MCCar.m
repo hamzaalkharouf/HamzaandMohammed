@@ -9,46 +9,91 @@
 
 @implementation MCCar
 
-- (id)initWithchair_num:(NSInteger)chair_num andis_furniter_leather:(BOOL)is_furniter_leather andlength:(NSInteger)length andwidth:(NSInteger)width andUIColor:(UIColor *)color andmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num{
+- (instancetype)initWithchairNum:(NSInteger)chairNum
+     isFurniterLeather:(BOOL)isFurniterLeather
+                length:(NSInteger)length
+                 width:(NSInteger)width
+               UIColor:(UIColor *)color
+    manufactureCompany:(NSString *)manufactureCompany
+       manufactureDate:(NSDate *)manufactureDate
+                 model:(NSString *)model
+                engine:(MCEngine *)engine
+             planteNum:(NSInteger )planteNum
+            MCGearType:(MCGearType)gearType
+         bodySerialNum:(NSInteger )bodySerialNum{
 
-    self = [self initWithlength:length andwidth:width andUIColor:color andmanufactureCompany:manufactureCompany andmanufactureDate:manufactureDate andmodel:model andengine:engine andplante_num:plante_num andMCGearType:gearType andbody_serial_num:body_serial_num];
+    self = [self initWithlength:length
+                          width:width
+                        UIColor:color
+             manufactureCompany:manufactureCompany
+                manufactureDate:manufactureDate
+                          model:model
+                         engine:engine
+                      planteNum:planteNum
+                     MCGearType:gearType
+                  bodySerialNum:bodySerialNum];
     if (self){
-        [self setChair_num:chair_num];
-        [self setIs_furniter_leather:is_furniter_leather];
+        [self setChairNum:chairNum];
+        [self setIsFurniterLeather:isFurniterLeather];
     }
     return self;
 }
-- (id)init{
-    NSString *defaultmanufactureCompany=@"mercedes";
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        [dateComponents setYear:2017];
-        [dateComponents setMonth:1];
-        [dateComponents setDay:28];
-        [dateComponents setHour:11];
-        [dateComponents setMinute:9];
-        NSCalendar *calendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSDate *defaultmanufactureDate = [calendar dateFromComponents:dateComponents];
-    NSString *defaultmodel=@"MV Agusta";
-    MCEngine *defaultengine = [[MCEngine alloc]init];
-    NSInteger defaultplante_num=00000;
-    NSInteger defaultbody_serial_num=123456;
-    NSInteger defaultlength=4;
-    NSInteger defaultwidth=2;
-    UIColor *defaultcolor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-    MCGearType defaultMCGearType =normall;
 
-    NSInteger defaultchair_num=4;
-    BOOL defaultis_furniter_leather=YES;
+- (instancetype)init{
+    NSString *defaultmanufactureCompany=@"";
+    NSDate *defaultmanufactureDate =  [NSDate date];
+
+    NSString *defaultmodel=@" ";
+    MCEngine *defaultengine = [[MCEngine alloc]init];
+    NSInteger defaultplanteNum=0;
+    NSInteger defaultbodySerialNum=0;
+    NSInteger defaultlength=0;
+    NSInteger defaultwidth=0;
+    UIColor *defaultcolor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    MCGearType defaultMCGearType =notdefined;
+
+    NSInteger defaultchairNum=0;
+    BOOL defaultisFurniterLeather=YES;
     
     
-    return [self initWithchair_num:defaultchair_num andis_furniter_leather:defaultis_furniter_leather andlength:defaultlength andwidth:defaultwidth andUIColor:defaultcolor andmanufactureCompany:defaultmanufactureCompany andmanufactureDate:defaultmanufactureDate andmodel:defaultmodel andengine:defaultengine andplante_num:defaultplante_num andMCGearType:defaultMCGearType andbody_serial_num:defaultbody_serial_num];
+    return [self initWithchairNum:defaultchairNum
+                isFurniterLeather:defaultisFurniterLeather
+                           length:defaultlength
+                            width:defaultwidth
+                          UIColor:defaultcolor
+               manufactureCompany:defaultmanufactureCompany
+                  manufactureDate:defaultmanufactureDate
+                            model:defaultmodel
+                           engine:defaultengine
+                        planteNum:defaultplanteNum
+                       MCGearType:defaultMCGearType
+                    bodySerialNum:defaultbodySerialNum];
 }
-- (id)initWithlength:(NSInteger)length andwidth:(NSInteger)width andUIColor:(UIColor *)color andmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num{
+- (instancetype)initWithlength:(NSInteger)length
+               width:(NSInteger)width
+             UIColor:(UIColor *)color
+  manufactureCompany:(NSString *)manufactureCompany  manufactureDate:(NSDate *)manufactureDate
+               model:(NSString *)model
+              engine:(MCEngine *)engine
+           planteNum:(NSInteger )planteNum
+          MCGearType:(MCGearType)gearType
+       bodySerialNum:(NSInteger )bodySerialNum{
     
-    NSInteger defaultchair_num=4;
-    BOOL defaultis_furniter_leather=YES;
+    NSInteger defaultchairNum=0;
+    BOOL defaultisFurniterLeather=YES;
     
-    return [self initWithchair_num:defaultchair_num andis_furniter_leather:defaultis_furniter_leather andlength:length andwidth:width andUIColor:color andmanufactureCompany:manufactureCompany andmanufactureDate:manufactureDate andmodel:model andengine:engine andplante_num:plante_num andMCGearType:gearType andbody_serial_num:body_serial_num];
+    return [self initWithchairNum:defaultchairNum
+                isFurniterLeather:defaultisFurniterLeather
+                           length:length
+                            width:width
+                          UIColor:color
+               manufactureCompany:manufactureCompany
+                  manufactureDate:manufactureDate
+                            model:model
+                           engine:engine
+                        planteNum:planteNum
+                       MCGearType:gearType
+                    bodySerialNum:bodySerialNum];
 }
 
 @end

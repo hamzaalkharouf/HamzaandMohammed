@@ -8,9 +8,25 @@
 #import "MCVehicle.h"
 
 @implementation MCVehicle
-- (id)initWithlength:(NSInteger)length andwidth:(NSInteger)width andUIColor:(UIColor *)color andmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num{
 
-    self = [super initWithmanufactureCompany:manufactureCompany andmanufactureDate:manufactureDate andmodel:model andengine:engine andplante_num:plante_num andMCGearType:gearType andbody_serial_num:body_serial_num];
+- (instancetype)initWithlength:(NSInteger)length
+               width:(NSInteger)width
+             UIColor:(UIColor *)color
+  manufactureCompany:(NSString *)manufactureCompany
+     manufactureDate:(NSDate *)manufactureDate
+               model:(NSString *)model
+              engine:(MCEngine *)engine
+           planteNum:(NSInteger )planteNum
+          MCGearType:(MCGearType)gearType
+       bodySerialNum:(NSInteger )bodySerialNum{
+
+    self = [super initWithmanufactureCompany:manufactureCompany
+                             manufactureDate:manufactureDate
+                                       model:model
+                                      engine:engine
+                                   planteNum:planteNum
+                                  MCGearType:gearType
+                               bodySerialNum:bodySerialNum];
     if (self){
         [self setLength:length];
         [self setWidth:width];
@@ -18,36 +34,53 @@
     }
     return self;
 }
-- (id)init{
-    NSString *defaultmanufactureCompany=@"mercedes";
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        [dateComponents setYear:2017];
-        [dateComponents setMonth:1];
-        [dateComponents setDay:28];
-        [dateComponents setHour:11];
-        [dateComponents setMinute:9];
-        NSCalendar *calendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSDate *defaultmanufactureDate = [calendar dateFromComponents:dateComponents];
-    NSString *defaultmodel=@"MV Agusta";
+- (instancetype)init{
+    NSString *defaultmanufactureCompany=@" ";
+    NSDate *defaultmanufactureDate =  [NSDate date];
+    NSString *defaultmodel=@" ";
     MCEngine *defaultengine = [[MCEngine alloc]init];
-    NSInteger defaultplante_num=00000;
-    NSInteger defaultbody_serial_num=123456;
-    MCGearType defaultMCGearType =normall;
+    NSInteger defaultplanteNum=0;
+    NSInteger defaultbodySerialNum=0;
+    MCGearType defaultMCGearType =notdefined;
 
-    NSInteger defaultlength=4;
-    NSInteger defaultwidth=2;
+    NSInteger defaultlength=0;
+    NSInteger defaultwidth=0;
     UIColor *defaultcolor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     
     
-    return [self initWithlength:defaultlength andwidth:defaultwidth andUIColor:defaultcolor andmanufactureCompany:defaultmanufactureCompany andmanufactureDate:defaultmanufactureDate andmodel:defaultmodel andengine:defaultengine andplante_num:defaultplante_num andMCGearType:defaultMCGearType andbody_serial_num:defaultbody_serial_num];
+    return [self initWithlength:defaultlength
+                          width:defaultwidth
+                        UIColor:defaultcolor
+             manufactureCompany:defaultmanufactureCompany
+                manufactureDate:defaultmanufactureDate
+                        model:defaultmodel
+                        engine:defaultengine
+                      planteNum:defaultplanteNum
+                     MCGearType:defaultMCGearType
+                  bodySerialNum:defaultbodySerialNum];
 }
-- (id)initWithmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num{
+- (instancetype)initWithmanufactureCompany:(NSString *)manufactureCompany
+                 manufactureDate:(NSDate *)manufactureDate
+                           model:(NSString *)model
+                          engine:(MCEngine *)engine
+                       planteNum:(NSInteger )planteNum
+                      MCGearType:(MCGearType)gearType
+                   bodySerialNum:(NSInteger )bodySerialNum{
     
-    NSInteger defaultlength=4;
-    NSInteger defaultwidth=2;
+    NSInteger defaultlength=0;
+    NSInteger defaultwidth=0;
     UIColor *defaultcolor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     
-    return [self initWithlength:defaultlength andwidth:defaultwidth andUIColor:defaultcolor andmanufactureCompany:manufactureCompany andmanufactureDate:manufactureDate andmodel:model andengine:engine andplante_num:plante_num andMCGearType:gearType andbody_serial_num:body_serial_num];
+    return [self initWithlength:defaultlength
+                          width:defaultwidth
+                         UIColor:defaultcolor
+             manufactureCompany:manufactureCompany
+                manufactureDate:manufactureDate
+                          model:model
+                         engine:engine
+                      planteNum:planteNum
+                     MCGearType:gearType
+                  bodySerialNum:bodySerialNum];
 }
 
 

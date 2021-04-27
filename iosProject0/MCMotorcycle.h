@@ -10,9 +10,19 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MCMotorcycle : MCAutomobile
-@property (assign, nonatomic) double tier_diameter;
+
+@property (assign, nonatomic) double tierDiameter;
 @property (assign, nonatomic) double length;
-- (id)initWithtier_diameter:(double)tier_diameter andlength:(double)length andmanufactureCompany:(NSString *)manufactureCompany andmanufactureDate:(NSDate *)manufactureDate andmodel:(NSString *)model andengine:(MCEngine *)engine andplante_num:(NSInteger )plante_num andMCGearType:(MCGearType)gearType andbody_serial_num:(NSInteger )body_serial_num;
+
+- (instancetype)initWithtierDameter:(double)tierDiameter
+                   length:(double)length
+       manufactureCompany:(NSString *)manufactureCompany
+          manufactureDate:(NSDate *)manufactureDate
+                    model:(NSString *)model
+                   engine:(MCEngine *)engine
+                planteNum:(NSInteger )planteNum
+               MCGearType:(MCGearType)gearType
+            bodySerialNum:(NSInteger )bodySerialNum;
 @end
 
 NS_ASSUME_NONNULL_END
